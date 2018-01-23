@@ -65,6 +65,10 @@
 		<property name="userService" ref="userService"/>
 	</bean>
 	
+	<bean id="checkImgAction"
+		class="com.gjz.shop.user.action.CheckImgAction" scope="prototype">
+	</bean>
+	
 	<!-- Service配置 -->
 	<bean id="userService" class="com.gjz.shop.user.service.UserServiceImpl">
 		<property name="userDao" ref="userDao"/>

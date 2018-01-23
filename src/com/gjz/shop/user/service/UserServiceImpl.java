@@ -4,6 +4,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.gjz.shop.user.dao.UserDao;
 import com.gjz.shop.user.entity.User;
+import com.gjz.shop.utils.MailUtils;
 import com.gjz.shop.utils.UUIDUtils;
 
 @Transactional
@@ -31,6 +32,30 @@ public class UserServiceImpl implements UserService{
 		user.setCode(code);
 		
 		userDao.save(user);
+		
+		//·¢ËÍ¼¤»îÓÊ¼þ
+		MailUtils.sendMail(user.getEmail(), user.getCode());
+	}
+
+
+	@Override
+	public User findByCode(String code) {
+		return userDao.findByCode(code);
+	}
+
+
+	@Override
+	public void update(User existUser) {
+		userDao.update(existUser);
+	}
+
+
+	@Override
+	public User login(User user) {
+		
+		return userDao.login(user);
+		
+		
 	}
 
 	
