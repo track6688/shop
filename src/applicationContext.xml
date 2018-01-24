@@ -40,6 +40,7 @@
 		<property name="mappingResources">
 			<list>
 				<value>com/gjz/shop/user/entity/User.hbm.xml</value>
+				<value>com/gjz/shop/category/entity/Category.hbm.xml</value>
 			</list>
 		</property>
 	
@@ -57,7 +58,9 @@
 	<!-- action Bean -->
 	<bean id="indexAction"
 		class="com.gjz.shop.index.action.IndexAction" scope="prototype"
-	/>
+	>
+		<property name="categoryService" ref="categoryService"/>
+	</bean>
 	
 	
 	<!-- 用户Action -->
@@ -74,11 +77,23 @@
 		<property name="userDao" ref="userDao"/>
 	</bean>
 	
+	<bean id="categoryService" class="com.gjz.shop.category.service.CategoryServiceImpl">
+		<property name="categoryDao" ref="categoryDao"/>
+	</bean>
+	
 	<!-- Dao配置 -->
 	
 	<bean id="userDao" class="com.gjz.shop.user.dao.UserDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	
+	<!-- 一级菜单 -->
+	<bean id="categoryDao" class="com.gjz.shop.category.dao.CategoryDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	
+	
 
 
 </beans>
