@@ -9,5 +9,7 @@ public interface ProductService {
 	public List<Product> findHot();
 
 	public List<Product> findNew();
+
+	public Product findByPid(Integer pid);
 	
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-1-25 0:16:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.gjz.shop.categorysecond.entity.CategorySecond" table="CATEGORYSECOND">
+        <id name="csid" type="java.lang.Integer">
+            <column name="CSID" />
+            <generator class="native" />
+        </id>
+        <property name="csname" type="java.lang.String">
+            <column name="csname" />
+        </property>
+        <many-to-one name="category" class="com.gjz.shop.category.entity.Category" fetch="join">
+            <column name="cid" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

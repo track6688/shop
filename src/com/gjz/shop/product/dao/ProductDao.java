@@ -9,6 +9,8 @@ public interface ProductDao {
 	public List<Product> findHot();
 
 	public List<Product> findNew();
+
+	public Product findByPid(Integer pid);
 	
 	
 }

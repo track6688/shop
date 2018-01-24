@@ -25,5 +25,10 @@ public class ProductServiceImpl implements ProductService {
 	public List<Product> findNew() {
 		return productDao.findNew();
 	}
+
+	@Override
+	public Product findByPid(Integer pid) {
+		return productDao.findByPid(pid);
+	}
 	
 }

@@ -40,4 +40,11 @@ public class ProductDaoImpl extends HibernateDaoSupport implements ProductDao{
 		return nList;
 	}
 
+	@Override
+	public Product findByPid(Integer pid) {
+		
+		return this.getHibernateTemplate().get(Product.class, pid);
+		
+	}
+
 }

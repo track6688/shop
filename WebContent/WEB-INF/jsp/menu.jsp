@@ -57,7 +57,7 @@
 			
 			<s:iterator value="#session.cList" var = "c">
 				<li>
-					<a href=""><s:property value="#c.cname"/></a>
+					<a href="${pageContext.request.contextPath }/product_findByCid.action?cid=<s:property value="#c.cid"/>"><s:property value="#c.cname"/></a>
 				</li>
 			</s:iterator>
 			

@@ -1,11 +1,23 @@
 package com.gjz.shop.category.entity;
 
 import java.io.Serializable;
+import java.util.Set;
+
+import com.gjz.shop.categorysecond.entity.CategorySecond;
 
 public class Category implements Serializable{
 	
 	private Integer cid;
 	private String cname;
+	
+	private Set<CategorySecond> categorySeconds;
+	
+	public Set<CategorySecond> getCategorySeconds() {
+		return categorySeconds;
+	}
+	public void setCategorySeconds(Set<CategorySecond> categorySeconds) {
+		this.categorySeconds = categorySeconds;
+	}
 	public Integer getCid() {
 		return cid;
 	}

@@ -42,6 +42,7 @@
 				<value>com/gjz/shop/user/entity/User.hbm.xml</value>
 				<value>com/gjz/shop/category/entity/Category.hbm.xml</value>
 				<value>com/gjz/shop/product/entity/Product.hbm.xml</value>
+				<value>com/gjz/shop/categorysecond/entity/CategorySecond.hbm.xml</value>
 			</list>
 		</property>
 	
@@ -73,6 +74,13 @@
 	<bean id="checkImgAction"
 		class="com.gjz.shop.user.action.CheckImgAction" scope="prototype">
 	</bean>
+	
+	<!-- 商品Action -->
+	<bean id="productAction"
+		class="com.gjz.shop.product.action.ProductAction" scope="prototype">
+		<property name="productService" ref="productService"/>
+	</bean>
+	
 	
 	<!-- Service配置 -->
 	<bean id="userService" class="com.gjz.shop.user.service.UserServiceImpl">
