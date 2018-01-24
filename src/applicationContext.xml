@@ -41,6 +41,7 @@
 			<list>
 				<value>com/gjz/shop/user/entity/User.hbm.xml</value>
 				<value>com/gjz/shop/category/entity/Category.hbm.xml</value>
+				<value>com/gjz/shop/product/entity/Product.hbm.xml</value>
 			</list>
 		</property>
 	
@@ -60,6 +61,7 @@
 		class="com.gjz.shop.index.action.IndexAction" scope="prototype"
 	>
 		<property name="categoryService" ref="categoryService"/>
+		<property name="productService" ref="productService"/>
 	</bean>
 	
 	
@@ -81,6 +83,10 @@
 		<property name="categoryDao" ref="categoryDao"/>
 	</bean>
 	
+	<bean id="productService" class="com.gjz.shop.product.service.ProductServiceImpl">
+		<property name="productDao" ref="productDao"/>
+	</bean>
+	
 	<!-- Dao配置 -->
 	
 	<bean id="userDao" class="com.gjz.shop.user.dao.UserDaoImpl">
@@ -89,6 +95,11 @@
 	
 	<!-- 一级菜单 -->
 	<bean id="categoryDao" class="com.gjz.shop.category.dao.CategoryDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<!-- 商品相关 -->
+	<bean id="productDao" class="com.gjz.shop.product.dao.ProductDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
