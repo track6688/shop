@@ -1,6 +1,9 @@
 package com.gjz.shop.categorysecond.entity;
 
+import java.util.Set;
+
 import com.gjz.shop.category.entity.Category;
+import com.gjz.shop.product.entity.Product;
 
 /**
  * 二级分类的实体类
@@ -11,6 +14,9 @@ public class CategorySecond {
 
 	private Integer csid;
 	private String csname;
+	
+	private Set<Product> products;
+	
 	
 	private Category category;
 	
@@ -33,6 +39,13 @@ public class CategorySecond {
 		this.csname = csname;
 	}
 	
+	
+	public Set<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}
 	
 	
 	

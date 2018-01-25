@@ -14,5 +14,11 @@
         <many-to-one name="category" class="com.gjz.shop.category.entity.Category" fetch="join">
             <column name="cid" />
         </many-to-one>
+        
+        <set order-by="pid" name="products" lazy="false">
+        	<key column="csid"/>
+        	<one-to-many class="com.gjz.shop.product.entity.Product"/>
+        </set>
+        
     </class>
 </hibernate-mapping>

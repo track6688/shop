@@ -2,6 +2,8 @@ package com.gjz.shop.product.entity;
 
 import java.util.Date;
 
+import com.gjz.shop.categorysecond.entity.CategorySecond;
+
 /**
  * 商品
  * @author GuoJiazhen
@@ -28,7 +30,16 @@ public class Product {
 	private Integer is_hot;
 	
 	//二级分类菜单
+	CategorySecond categorySecond;
 	
+	public void setCategorySecond(CategorySecond categorySecond) {
+		this.categorySecond = categorySecond;
+	}
+	
+	public CategorySecond getCategorySecond() {
+		return categorySecond;
+	}
+
 	public Integer getPid() {
 		return pid;
 	}

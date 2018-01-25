@@ -29,5 +29,8 @@
         <property name="is_hot" type="java.lang.Integer">
             <column name="IS_HOT" />
         </property>
+        
+        <many-to-one name="categorySecond" lazy="false" class="com.gjz.shop.categorysecond.entity.CategorySecond" column="csid"/>
+        
     </class>
 </hibernate-mapping>
