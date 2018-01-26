@@ -1,5 +1,6 @@
 package com.gjz.shop.categorysecond.entity;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import com.gjz.shop.category.entity.Category;
@@ -10,7 +11,7 @@ import com.gjz.shop.product.entity.Product;
  * @author GuoJiazhen
  *
  */
-public class CategorySecond {
+public class CategorySecond implements Serializable{
 
 	private Integer csid;
 	private String csname;

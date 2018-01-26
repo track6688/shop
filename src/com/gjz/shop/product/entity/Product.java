@@ -1,5 +1,6 @@
 package com.gjz.shop.product.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.gjz.shop.categorysecond.entity.CategorySecond;
@@ -19,7 +20,7 @@ import com.gjz.shop.categorysecond.entity.CategorySecond;
   `csid` int(11) DEFAULT NULL,
  *
  */
-public class Product {
+public class Product implements Serializable{
 	private Integer pid;
 	private String pname;
 	private Double market_price;

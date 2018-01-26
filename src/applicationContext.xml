@@ -81,6 +81,10 @@
 		<property name="productService" ref="productService"/>
 	</bean>
 	
+	<!-- 购物车Action -->
+	<bean id="cartAction" class="com.gjz.shop.cart.action.CartAction" scope="prototype">
+		<property name="productService" ref="productService"/>
+	</bean>
 	
 	<!-- Service配置 -->
 	<bean id="userService" class="com.gjz.shop.user.service.UserServiceImpl">
