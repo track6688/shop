@@ -18,7 +18,7 @@
 					</li>
 					
 					<li id="headerLogin" class="headerLogin" style="display: list-item;">
-						<a href="#">我的订单</a>
+						<a href="${pageContext.request.contextPath}/order_findByUid.action?page=1">我的订单</a>
 					</li>
 					
 					<li id="headerRegister" class="headerRegister" style="display: list-item;">

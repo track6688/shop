@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2018-1-25 0:16:08 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 2018-1-26 13:34:36 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.gjz.shop.categorysecond.entity.CategorySecond" table="CATEGORYSECOND">
         <id name="csid" type="java.lang.Integer">
@@ -9,16 +9,16 @@
             <generator class="native" />
         </id>
         <property name="csname" type="java.lang.String">
-            <column name="csname" />
+            <column name="CSNAME" />
         </property>
+        <set name="products" table="PRODUCT" inverse="false" lazy="false">
+            <key>
+                <column name="CSID" />
+            </key>
+            <one-to-many class="com.gjz.shop.product.entity.Product" />
+        </set>
         <many-to-one name="category" class="com.gjz.shop.category.entity.Category" fetch="join">
             <column name="cid" />
         </many-to-one>
-        
-        <set order-by="pid" name="products" lazy="false">
-        	<key column="csid"/>
-        	<one-to-many class="com.gjz.shop.product.entity.Product"/>
-        </set>
-        
     </class>
 </hibernate-mapping>

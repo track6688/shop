@@ -68,16 +68,6 @@
 									<input type="password" id="password" name="password" class="text" maxlength="20" autocomplete="off">
 								</td>
 							</tr>
-								<tr>
-									<th>
-										验证码:
-									</th>
-									<td>
-										<span class="fieldSet">
-											<input type="text" id="captcha" name="captcha" class="text captcha" maxlength="4" autocomplete="off"><img id="captchaImage" class="captchaImage" src="${pageContext.request.contextPath}/image/captcha.jhtml" title="点击更换验证码">
-										</span>
-									</td>
-								</tr>
 							<tr>
 								<th>&nbsp;
 									

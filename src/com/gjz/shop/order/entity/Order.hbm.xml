@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-1-26 13:34:36 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.gjz.shop.order.entity.Order" table="orders">
+        <id name="oid" type="java.lang.Integer">
+            <column name="OID" />
+            <generator class="native" />
+        </id>
+        <property name="total" type="java.lang.Double">
+            <column name="TOTAL" />
+        </property>
+        <property name="ordertime" type="java.util.Date">
+            <column name="ORDERTIME" />
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="STATE" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="addr" type="java.lang.String">
+            <column name="ADDR" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="PHONE" />
+        </property>
+        
+        <!-- 关联关系 与用户 -->
+        <many-to-one name="user" lazy="false" class="com.gjz.shop.user.entity.User" fetch="join">
+            <column name="uid" />
+        </many-to-one>
+        
+        <!-- 关联关系 与订单项 -->
+        <set name="orderItems" cascade="save-update" table="ORDERITEM"  lazy="false">
+            <key>
+                <column name="oid" />
+            </key>
+            <one-to-many class="com.gjz.shop.order.entity.OrderItem" />
+        </set>
+    </class>
+</hibernate-mapping>

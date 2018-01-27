@@ -43,6 +43,8 @@
 				<value>com/gjz/shop/category/entity/Category.hbm.xml</value>
 				<value>com/gjz/shop/product/entity/Product.hbm.xml</value>
 				<value>com/gjz/shop/categorysecond/entity/CategorySecond.hbm.xml</value>
+				<value>com/gjz/shop/order/entity/Order.hbm.xml</value>
+				<value>com/gjz/shop/order/entity/OrderItem.hbm.xml</value>
 			</list>
 		</property>
 	
@@ -86,6 +88,11 @@
 		<property name="productService" ref="productService"/>
 	</bean>
 	
+	<bean id="orderAction" class="com.gjz.shop.order.action.OrderAction" scope="prototype">
+		<property name="orderService" ref="orderService"/>
+	</bean>
+	
+	
 	<!-- Service配置 -->
 	<bean id="userService" class="com.gjz.shop.user.service.UserServiceImpl">
 		<property name="userDao" ref="userDao"/>
@@ -97,6 +104,10 @@
 	
 	<bean id="productService" class="com.gjz.shop.product.service.ProductServiceImpl">
 		<property name="productDao" ref="productDao"/>
+	</bean>
+	
+	<bean id="orderService" class="com.gjz.shop.order.service.OrderServiceImpl">
+		<property name="orderDao" ref="orderDao"/>
 	</bean>
 	
 	<!-- Dao配置 -->
@@ -115,6 +126,9 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
+	<bean id="orderDao" class="com.gjz.shop.order.dao.OrderDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 	
 	
 

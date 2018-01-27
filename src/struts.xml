@@ -11,6 +11,7 @@
 		
 		<global-results>
 			<result name="msg">/WEB-INF/jsp/msg.jsp</result>
+			<result name="login">/WEB-INF/jsp/login.jsp</result>
 		</global-results>
 			
 		<action name="index" class="indexAction">
@@ -49,6 +50,12 @@
 			<result name="removeCartItem">/WEB-INF/jsp/cart.jsp</result>
 			<result name="myCart">/WEB-INF/jsp/cart.jsp</result>
 		
+		</action>
+		
+		<!-- 订单Action -->
+		<action name="order_*" class="orderAction" method="{1}">
+			<result name="createOrder">/WEB-INF/jsp/order.jsp</result>
+			<result name="findByUid">/WEB-INF/jsp/orderList.jsp</result>
 		</action>
 		
 	</package>
