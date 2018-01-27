@@ -46,4 +46,19 @@ public class OrderDaoImpl  extends HibernateDaoSupport implements OrderDao{
 		return list;
 	}
 
+	/**
+	 * 从数据库中查出oid订单
+	 */
+	@Override
+	public Order findByOid(Integer oid) {
+		return this.getHibernateTemplate().get(Order.class, oid);
+	}
+
+	@Override
+	public void update(Order currentOrder) {
+		
+		this.getHibernateTemplate().update(currentOrder);
+		
+	}
+
 }

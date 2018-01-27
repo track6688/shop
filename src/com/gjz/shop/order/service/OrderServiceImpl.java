@@ -64,6 +64,18 @@ public class OrderServiceImpl implements OrderService {
 		return pageBean;
 	}
 
+	@Override
+	public Order findByOid(Integer oid) {
+		return orderDao.findByOid(oid);
+	}
+
+	@Override
+	public void update(Order currentOrder) {
+		
+		orderDao.update(currentOrder);
+		
+	}
+
 	
 	
 }

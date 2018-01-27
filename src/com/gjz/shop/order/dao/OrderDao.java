@@ -12,4 +12,8 @@ public interface OrderDao {
 
 	List<Order> findByPageUid(Integer uid, Integer begin, Integer limit);
 
+	Order findByOid(Integer oid);
+
+	void update(Order currentOrder);
+
 }
