@@ -45,6 +45,7 @@
 				<value>com/gjz/shop/categorysecond/entity/CategorySecond.hbm.xml</value>
 				<value>com/gjz/shop/order/entity/Order.hbm.xml</value>
 				<value>com/gjz/shop/order/entity/OrderItem.hbm.xml</value>
+				<value>com/gjz/shop/adminuser/entity/AdminUser.hbm.xml</value>
 			</list>
 		</property>
 	
@@ -92,6 +93,16 @@
 		<property name="orderService" ref="orderService"/>
 	</bean>
 	
+	<bean id="adminUserAction" class="com.gjz.shop.adminuser.action.AdminUserAction" scope="prototype">
+		<property name="adminUserService" ref="adminUserService"/>
+	</bean>
+	
+	<!-- 一级分类管理Action -->
+	<bean id="adminCategoryAction" class="com.gjz.shop.category.adminaction.AdminCategoryAction" scope="prototype">
+		<property name="categoryService" ref="categoryService"/>
+	</bean>
+	
+	
 	
 	<!-- Service配置 -->
 	<bean id="userService" class="com.gjz.shop.user.service.UserServiceImpl">
@@ -108,6 +119,10 @@
 	
 	<bean id="orderService" class="com.gjz.shop.order.service.OrderServiceImpl">
 		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	
+	<bean id="adminUserService" class="com.gjz.shop.adminuser.service.AdminUserServiceImpl">
+		<property name="adminUserDao" ref="adminUserDao"/>
 	</bean>
 	
 	<!-- Dao配置 -->
@@ -130,7 +145,10 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
+	<bean id="adminUserDao" class="com.gjz.shop.adminuser.dao.AdminUserDaoImpl">
 	
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 
 
 </beans>

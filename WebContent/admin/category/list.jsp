@@ -19,7 +19,7 @@
 				<TBODY>
 					<tr>
 						<td class="ta_01" align="center" bgColor="#afd1f3">
-							<strong>一级分类 列 表</strong>
+							<strong>一级分类列表</strong>
 						</TD>
 					</tr>
 					<tr>

@@ -16,8 +16,8 @@ body {
 </style>
 
 <body style="background: #278296">
-<s:actionerror />
-<form method="post" action="${pageContext.request.contextPath }/adminUser_login.action" target="_parent" name='theForm' onsubmit="return validate()">
+<center><s:actionerror /></center>
+<form method="post" action="${pageContext.request.contextPath }/adminUser_login.action" target="_parent" name='theForm' >
   <table cellspacing="0" cellpadding="0" style="margin-top: 100px" align="center">
   <tr>
     <td><img src="images/login.png" width="178" height="256" border="0" alt="SHOP" /></td>
@@ -42,7 +42,7 @@ body {
     </td>
   </tr>
   </table>
-  <input type="hidden" name="act" value="signin" />
+  <!-- <input type="hidden" name="act" value="signin" /> -->
 </form>
 
 </body>
