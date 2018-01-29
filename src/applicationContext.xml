@@ -102,6 +102,11 @@
 		<property name="categoryService" ref="categoryService"/>
 	</bean>
 	
+	<!-- 二级分类管理Action -->
+	<bean id="adminCategorySecondAction" class="com.gjz.shop.categorysecond.adminaction.AdminCategorySecondAction" scope="prototype"> 
+		<property name="categorySecondService" ref="categorySecondService"/>
+		<property name="categoryService" ref="categoryService"/>
+	</bean>
 	
 	
 	<!-- Service配置 -->
@@ -123,6 +128,10 @@
 	
 	<bean id="adminUserService" class="com.gjz.shop.adminuser.service.AdminUserServiceImpl">
 		<property name="adminUserDao" ref="adminUserDao"/>
+	</bean>
+	
+	<bean id="categorySecondService" class="com.gjz.shop.categorysecond.service.CategorySecondServiceImpl">
+		<property name="categorySecondDao" ref="categorySecondDao"/>	
 	</bean>
 	
 	<!-- Dao配置 -->
@@ -147,6 +156,11 @@
 	
 	<bean id="adminUserDao" class="com.gjz.shop.adminuser.dao.AdminUserDaoImpl">
 	
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<!-- 二级分类Dao -->
+	<bean id="categorySecondDao" class="com.gjz.shop.categorysecond.dao.CategorySecondDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 

@@ -11,7 +11,7 @@
         <property name="cname" type="java.lang.String">
             <column name="CNAME" />
         </property>
-        <set name="categorySeconds" table="CATEGORYSECOND" inverse="false" lazy="false">
+        <set name="categorySeconds" cascade="delete" table="CATEGORYSECOND" inverse="false" lazy="false">
             <key>
                 <column name="CID" />
             </key>
