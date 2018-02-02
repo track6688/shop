@@ -108,6 +108,16 @@
 		<property name="categoryService" ref="categoryService"/>
 	</bean>
 	
+	<bean id="adminProductAction" class="com.gjz.shop.product.adminaction.AdminProductAction" scope="prototype">
+		<property name="productService" ref="productService"/>
+		<property name="categorySecondService" ref="categorySecondService"/>
+	</bean>
+	
+	<!-- 订单管理Action -->
+	<bean id="adminOrderAction" class="com.gjz.shop.order.adminaction.AdminOrderAction" scope="prototype">
+		<property name="orderService" ref="orderService"/>
+	</bean>
+	
 	
 	<!-- Service配置 -->
 	<bean id="userService" class="com.gjz.shop.user.service.UserServiceImpl">

@@ -52,7 +52,7 @@
 								已支付
 							</s:if>
 							<s:if test="#order.state == 3 ">
-								<a><font color="red">确认收货</font></a>
+								<a href="${pageContext.request.contextPath}/order_updateState.action?oid=<s:property value="#order.oid" />"><font color="red">确认收货</font></a>
 							</s:if>
 							<s:if test="#order.state == 4 ">
 								已完成

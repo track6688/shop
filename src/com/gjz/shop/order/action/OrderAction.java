@@ -218,5 +218,21 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		return "msg";
 	}
 	
+	//更改订单状态
+	public String updateState()
+	{
+		//1、查询商品
+		
+		Order currOrder = orderService.findByOid(order.getOid());
+		
+		//2、修改信息
+		
+		currOrder.setState(4);
+		orderService.update(currOrder);
+		//3、页面跳转
+		
+		return "updateStateSuccess";
+	}
+	
 	
 }

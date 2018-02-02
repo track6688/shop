@@ -3,6 +3,7 @@ package com.gjz.shop.order.dao;
 import java.util.List;
 
 import com.gjz.shop.order.entity.Order;
+import com.gjz.shop.order.entity.OrderItem;
 
 public interface OrderDao {
 
@@ -15,5 +16,11 @@ public interface OrderDao {
 	Order findByOid(Integer oid);
 
 	void update(Order currentOrder);
+
+	Integer findCount();
+
+	List<Order> findByPage(Integer page, Integer limit);
+
+	List<OrderItem> findOrderItem(Integer oid);
 
 }

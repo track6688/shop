@@ -107,5 +107,59 @@ public class ProductServiceImpl implements ProductService {
 		
 		return pageBean;
 	}
+
+	@Override
+	public PageBean<Product> findByPage(Integer page) {
+		
+		PageBean<Product> pageBean = new PageBean<>();
+		
+		//设置当前页数
+		pageBean.setPage(page);
+		
+		//每页显示记录条数
+		Integer limit = 10;
+		pageBean.setLimit(limit);
+		
+		Integer totalCount = productDao.findCount();
+		pageBean.setTotalCount(totalCount);
+		
+		Integer totalPage = 0;
+		
+		if(totalCount % limit == 0)
+		{
+			totalPage = totalCount / limit;
+		}
+		else
+		{
+			totalPage = totalCount / limit + 1;
+		}
+		
+		pageBean.setTotalPage(totalPage);
+		
+		Integer begin = (page - 1) * limit;
+		List<Product> list = productDao.findByPage(begin, limit);
+		
+		pageBean.setList(list);
+		
+		return pageBean;
+	}
+
+	@Override
+	public void save(Product product) {
+		productDao.save(product);
+	}
+
+	@Override
+	public void delete(Product product) {
+		productDao.delete(product);
+	}
+
+	//业务层修改商品
+	@Override
+	public void update(Product product) {
+		
+		productDao.update(product);
+		
+	}
 	
 }

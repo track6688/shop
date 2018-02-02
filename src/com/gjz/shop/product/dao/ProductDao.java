@@ -19,6 +19,16 @@ public interface ProductDao {
 	public int findCountCsid(Integer csid);
 
 	public List<Product> findByPageCsid(Integer csid, int begin, int limit);
+
+	public Integer findCount();
+
+	public List<Product> findByPage(Integer begin, Integer limit);
+
+	public void save(Product product);
+
+	public void delete(Product product);
+
+	public void update(Product product);
 	
 	
 }

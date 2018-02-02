@@ -18,4 +18,6 @@ public interface CategorySecondDao {
 
 	void update(CategorySecond categorySecond);
 
+	List<CategorySecond> findAll();
+
 }

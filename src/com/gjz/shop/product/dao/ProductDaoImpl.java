@@ -119,4 +119,48 @@ public class ProductDaoImpl extends HibernateDaoSupport implements ProductDao{
 		return null;
 	}
 
+	@Override
+	public Integer findCount() {
+		
+		String hql = "select count(*) from Product";
+		
+		List<Long> list = this.getHibernateTemplate().find(hql);
+		
+		if(list != null && list.size() > 0)
+		{
+			return list.get(0).intValue();
+		}
+		
+		return null;
+	}
+
+	@Override
+	public List<Product> findByPage(Integer begin, Integer limit) {
+		
+		String hql = "from Product p order by p.pdate desc";
+		
+		List<Product> list = this.getHibernateTemplate().execute(new PageHibernateCallback<Product>(hql, null, begin, limit));
+		
+		return list;
+	}
+
+	@Override
+	public void save(Product product) {
+		this.getHibernateTemplate().save(product);
+	}
+
+	@Override
+	public void delete(Product product) {
+		
+		this.getHibernateTemplate().delete(product);
+		
+	}
+
+	@Override
+	public void update(Product product) {
+		
+		this.getHibernateTemplate().update(product);
+		
+	}
+
 }

@@ -76,6 +76,48 @@ public class OrderServiceImpl implements OrderService {
 		
 	}
 
+	/**
+	 * 业务层分页查找订单
+	 */
+	@Override
+	public PageBean<Order> findByPage(Integer page) {
+
+		PageBean<Order> pageBean = new PageBean<>();
+		//设置当前页数
+		pageBean.setPage(page);
+		
+		Integer limit = 10;
+		pageBean.setLimit(limit);
+		
+		Integer totalCount = orderDao.findCount();
+		pageBean.setTotalCount(totalCount);
+		
+		Integer totalPage = 0;
+		
+		if(totalCount % limit == 0)
+		{
+			totalPage = totalCount / limit;
+		}
+		else
+		{
+			totalPage = totalCount / limit + 1;
+		}
+		//设置总页数
+		pageBean.setTotalPage(totalPage);
+		
+		List<Order> list = orderDao.findByPage(page, limit);
+		
+		pageBean.setList(list);
+		
+		
+		return pageBean;
+	}
+
+	@Override
+	public List<OrderItem> findOrderItem(Integer oid) {
+		return orderDao.findOrderItem(oid);
+	}
+
 	
 	
 }
